@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.wrapper {
+			width: 200px;
+		}
+		.box {
+			overflow: hidden;
+			max-height: 0;
+			transition: max-height .5s;
+		}
+		.box.open {
+			max-height: 400px;
+		}
+		.arrow {
+			text-align: right;
+			cursor: pointer;
+			transition:  transform .5s;
+		}
+		.arrow.clicked {
+			transform: rotate(180deg);
+		}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<h4>下面点击下拉</h4>
+		<div class="box dd">刮风这天，我试过握着你手，但偏偏，风渐渐，打到我看你不见，还要多久，我才能在你身边，等到放晴的那天也许你会比较好一点，从前从前，有个人爱你很久</div>
+		<div class="arrow">↓</div>
+	</div>
+	<script>
+		var arrow = document.getElementsByClassName('arrow')[0]
+		var box = document.getElementsByClassName('box')[0]
+		console.log(box.classList instanceof Array)
+		arrow.addEventListener('click', function () {
+			if (box.classList.contains('open') > 0) {
+				box.classList.toggle('open')
+			} else {
+				box.classList.toggle('open')
+			}
+		})
+	</script>
+</body>
+</html>
