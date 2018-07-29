@@ -4,44 +4,53 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<style>
-		.wrapper {
-			width: 200px;
-		}
 		.box {
-			overflow: hidden;
-			max-height: 0;
-			transition: max-height .5s;
+			width: 250px;
+			margin: 50px auto 0;
+			padding: 20px;
+			outline: 1px solid #ccc;
 		}
-		.box.open {
-			max-height: 400px;
+		.content {
+			max-height: 0;
+			overflow: hidden;
+			transition: max-height .3s;
+		}
+		.spreaded {
+			max-height: 500px;
+		}
+		.arrow-box {
+			text-align: right;
 		}
 		.arrow {
-			text-align: right;
 			cursor: pointer;
-			transition:  transform .5s;
+			transition: transform .3s;
+			float: right;
 		}
-		.arrow.clicked {
+		.arrow-upsideDown {
 			transform: rotate(180deg);
+		}
+		.clear {
+			clear: both;
 		}
 	</style>
 </head>
 <body>
-	<div class="wrapper">
-		<h4>下面点击下拉</h4>
-		<div class="box dd">刮风这天，我试过握着你手，但偏偏，风渐渐，打到我看你不见，还要多久，我才能在你身边，等到放晴的那天也许你会比较好一点，从前从前，有个人爱你很久</div>
-		<div class="arrow">↓</div>
+	<div class="box ">
+		<h4>点击箭头打开或收起</h4>
+		<div class="content">我爱北京天安门，天安门上太阳升我爱北京天安门，天安门上太阳升我爱北京天安门，天安门上太阳升我爱北京天安门，天安门上太阳升我爱北京天安门，天安门上太阳升我爱北京天安门，天安门上太阳升我爱北京天安门，天安门上太阳升我爱北京天安门，天安门上太阳升我爱北京天安门，天安门上太阳升我爱北京天安门，天安门上太阳升我爱北京天安门，天安门上太阳升我爱北京天安门，天安门上太阳升我爱北京天安门，天安门上太阳升我爱北京天安门，天安门上太阳升我爱北京天安门，天安门上太阳升我爱北京天安门，天安门上太阳升我爱北京天安门，天安门上太阳升我爱北京天安门，天安门上太阳升我爱北京天安门，天安门上太阳升我爱北京天安门，天安门上太阳升我爱北京天安门，天安门上太阳升我爱北京天安门，天安门上太阳升</div>
+		<div class="arrow-box"><div class="arrow">↓</div></div>
+		<div class="clear"></div>
 	</div>
+<!-- 	<textarea name="" id="" cols="30" rows="10" style="text-align: left;">
+
+	</textarea> -->
 	<script>
 		var arrow = document.getElementsByClassName('arrow')[0]
-		var box = document.getElementsByClassName('box')[0]
-		console.log(box.classList instanceof Array)
-		arrow.addEventListener('click', function () {
-			if (box.classList.contains('open') > 0) {
-				box.classList.toggle('open')
-			} else {
-				box.classList.toggle('open')
-			}
-		})
+		var content = document.getElementsByClassName('content')[0]
+		arrow.onclick = function () {
+			content.classList.toggle('spreaded')
+			this.classList.toggle('arrow-upsideDown')
+		}
 	</script>
 </body>
 </html>
