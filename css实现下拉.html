@@ -45,8 +45,8 @@
 
 	</textarea> -->
 	<script>
-		var arrow = document.getElementsByClassName('arrow')[0]
-		var content = document.getElementsByClassName('content')[0]
+		var arrow = document.querySelector('.arrow')
+		var content = document.querySelector('.content')
 		arrow.onclick = function () {
 			content.classList.toggle('spreaded')
 			this.classList.toggle('arrow-upsideDown')
